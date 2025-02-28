@@ -1,0 +1,555 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXContainerItemProxy section */
+		6BEF1C4D2D71FA6B002B50FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BEF1C2B2D71FA69002B50FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BEF1C322D71FA69002B50FF;
+			remoteInfo = myLittlePonyGalagaGame;
+		};
+		6BEF1C572D71FA6B002B50FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 6BEF1C2B2D71FA69002B50FF /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 6BEF1C322D71FA69002B50FF;
+			remoteInfo = myLittlePonyGalagaGame;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		6BEF1C332D71FA69002B50FF /* myLittlePonyGalagaGame.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = myLittlePonyGalagaGame.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BEF1C4C2D71FA6B002B50FF /* myLittlePonyGalagaGameTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myLittlePonyGalagaGameTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		6BEF1C562D71FA6B002B50FF /* myLittlePonyGalagaGameUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = myLittlePonyGalagaGameUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFileSystemSynchronizedRootGroup section */
+		6BEF1C352D71FA69002B50FF /* myLittlePonyGalagaGame */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = myLittlePonyGalagaGame;
+			sourceTree = "<group>";
+		};
+		6BEF1C4F2D71FA6B002B50FF /* myLittlePonyGalagaGameTests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = myLittlePonyGalagaGameTests;
+			sourceTree = "<group>";
+		};
+		6BEF1C592D71FA6B002B50FF /* myLittlePonyGalagaGameUITests */ = {
+			isa = PBXFileSystemSynchronizedRootGroup;
+			path = myLittlePonyGalagaGameUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXFileSystemSynchronizedRootGroup section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		6BEF1C302D71FA69002B50FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEF1C492D71FA6B002B50FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEF1C532D71FA6B002B50FF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		6BEF1C2A2D71FA69002B50FF = {
+			isa = PBXGroup;
+			children = (
+				6BEF1C352D71FA69002B50FF /* myLittlePonyGalagaGame */,
+				6BEF1C4F2D71FA6B002B50FF /* myLittlePonyGalagaGameTests */,
+				6BEF1C592D71FA6B002B50FF /* myLittlePonyGalagaGameUITests */,
+				6BEF1C342D71FA69002B50FF /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		6BEF1C342D71FA69002B50FF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				6BEF1C332D71FA69002B50FF /* myLittlePonyGalagaGame.app */,
+				6BEF1C4C2D71FA6B002B50FF /* myLittlePonyGalagaGameTests.xctest */,
+				6BEF1C562D71FA6B002B50FF /* myLittlePonyGalagaGameUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6BEF1C322D71FA69002B50FF /* myLittlePonyGalagaGame */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BEF1C602D71FA6B002B50FF /* Build configuration list for PBXNativeTarget "myLittlePonyGalagaGame" */;
+			buildPhases = (
+				6BEF1C2F2D71FA69002B50FF /* Sources */,
+				6BEF1C302D71FA69002B50FF /* Frameworks */,
+				6BEF1C312D71FA69002B50FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			fileSystemSynchronizedGroups = (
+				6BEF1C352D71FA69002B50FF /* myLittlePonyGalagaGame */,
+			);
+			name = myLittlePonyGalagaGame;
+			packageProductDependencies = (
+			);
+			productName = myLittlePonyGalagaGame;
+			productReference = 6BEF1C332D71FA69002B50FF /* myLittlePonyGalagaGame.app */;
+			productType = "com.apple.product-type.application";
+		};
+		6BEF1C4B2D71FA6B002B50FF /* myLittlePonyGalagaGameTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BEF1C632D71FA6B002B50FF /* Build configuration list for PBXNativeTarget "myLittlePonyGalagaGameTests" */;
+			buildPhases = (
+				6BEF1C482D71FA6B002B50FF /* Sources */,
+				6BEF1C492D71FA6B002B50FF /* Frameworks */,
+				6BEF1C4A2D71FA6B002B50FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6BEF1C4E2D71FA6B002B50FF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6BEF1C4F2D71FA6B002B50FF /* myLittlePonyGalagaGameTests */,
+			);
+			name = myLittlePonyGalagaGameTests;
+			packageProductDependencies = (
+			);
+			productName = myLittlePonyGalagaGameTests;
+			productReference = 6BEF1C4C2D71FA6B002B50FF /* myLittlePonyGalagaGameTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		6BEF1C552D71FA6B002B50FF /* myLittlePonyGalagaGameUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 6BEF1C662D71FA6B002B50FF /* Build configuration list for PBXNativeTarget "myLittlePonyGalagaGameUITests" */;
+			buildPhases = (
+				6BEF1C522D71FA6B002B50FF /* Sources */,
+				6BEF1C532D71FA6B002B50FF /* Frameworks */,
+				6BEF1C542D71FA6B002B50FF /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				6BEF1C582D71FA6B002B50FF /* PBXTargetDependency */,
+			);
+			fileSystemSynchronizedGroups = (
+				6BEF1C592D71FA6B002B50FF /* myLittlePonyGalagaGameUITests */,
+			);
+			name = myLittlePonyGalagaGameUITests;
+			packageProductDependencies = (
+			);
+			productName = myLittlePonyGalagaGameUITests;
+			productReference = 6BEF1C562D71FA6B002B50FF /* myLittlePonyGalagaGameUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		6BEF1C2B2D71FA69002B50FF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 1620;
+				LastUpgradeCheck = 1620;
+				TargetAttributes = {
+					6BEF1C322D71FA69002B50FF = {
+						CreatedOnToolsVersion = 16.2;
+					};
+					6BEF1C4B2D71FA6B002B50FF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 6BEF1C322D71FA69002B50FF;
+					};
+					6BEF1C552D71FA6B002B50FF = {
+						CreatedOnToolsVersion = 16.2;
+						TestTargetID = 6BEF1C322D71FA69002B50FF;
+					};
+				};
+			};
+			buildConfigurationList = 6BEF1C2E2D71FA69002B50FF /* Build configuration list for PBXProject "myLittlePonyGalagaGame" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 6BEF1C2A2D71FA69002B50FF;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 6BEF1C342D71FA69002B50FF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				6BEF1C322D71FA69002B50FF /* myLittlePonyGalagaGame */,
+				6BEF1C4B2D71FA6B002B50FF /* myLittlePonyGalagaGameTests */,
+				6BEF1C552D71FA6B002B50FF /* myLittlePonyGalagaGameUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		6BEF1C312D71FA69002B50FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEF1C4A2D71FA6B002B50FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEF1C542D71FA6B002B50FF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		6BEF1C2F2D71FA69002B50FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEF1C482D71FA6B002B50FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6BEF1C522D71FA6B002B50FF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		6BEF1C4E2D71FA6B002B50FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BEF1C322D71FA69002B50FF /* myLittlePonyGalagaGame */;
+			targetProxy = 6BEF1C4D2D71FA6B002B50FF /* PBXContainerItemProxy */;
+		};
+		6BEF1C582D71FA6B002B50FF /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 6BEF1C322D71FA69002B50FF /* myLittlePonyGalagaGame */;
+			targetProxy = 6BEF1C572D71FA6B002B50FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		6BEF1C5E2D71FA6B002B50FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		6BEF1C5F2D71FA6B002B50FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		6BEF1C612D71FA6B002B50FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.myLittlePonyGalagaGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		6BEF1C622D71FA6B002B50FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
+				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIStatusBarHidden = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.myLittlePonyGalagaGame;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		6BEF1C642D71FA6B002B50FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.myLittlePonyGalagaGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myLittlePonyGalagaGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/myLittlePonyGalagaGame";
+			};
+			name = Debug;
+		};
+		6BEF1C652D71FA6B002B50FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 18.2;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.myLittlePonyGalagaGameTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/myLittlePonyGalagaGame.app/$(BUNDLE_EXECUTABLE_FOLDER_PATH)/myLittlePonyGalagaGame";
+			};
+			name = Release;
+		};
+		6BEF1C672D71FA6B002B50FF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.myLittlePonyGalagaGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = myLittlePonyGalagaGame;
+			};
+			name = Debug;
+		};
+		6BEF1C682D71FA6B002B50FF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				GENERATE_INFOPLIST_FILE = YES;
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = clc.myLittlePonyGalagaGameUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = myLittlePonyGalagaGame;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		6BEF1C2E2D71FA69002B50FF /* Build configuration list for PBXProject "myLittlePonyGalagaGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BEF1C5E2D71FA6B002B50FF /* Debug */,
+				6BEF1C5F2D71FA6B002B50FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BEF1C602D71FA6B002B50FF /* Build configuration list for PBXNativeTarget "myLittlePonyGalagaGame" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BEF1C612D71FA6B002B50FF /* Debug */,
+				6BEF1C622D71FA6B002B50FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BEF1C632D71FA6B002B50FF /* Build configuration list for PBXNativeTarget "myLittlePonyGalagaGameTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BEF1C642D71FA6B002B50FF /* Debug */,
+				6BEF1C652D71FA6B002B50FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		6BEF1C662D71FA6B002B50FF /* Build configuration list for PBXNativeTarget "myLittlePonyGalagaGameUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				6BEF1C672D71FA6B002B50FF /* Debug */,
+				6BEF1C682D71FA6B002B50FF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 6BEF1C2B2D71FA69002B50FF /* Project object */;
+}
