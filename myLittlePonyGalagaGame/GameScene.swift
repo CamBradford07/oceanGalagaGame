@@ -23,12 +23,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     override func update(_ currentTime: TimeInterval) {
+        
         for projectileIndex in stride(from: projectiles.count - 1, to: -1, by: -1){
             if projectiles[projectileIndex].position.y >= 717{
                 projectiles[projectileIndex].removeFromParent()
                 projectiles.remove(at: projectileIndex)
             }
         }
+        
+        
         }
     
     
@@ -50,5 +53,17 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         self.addChild(projectile)
         projectiles.append(projectile)
     }
+    
+    func moveLeft(){
+        player.physicsBody?.velocity.dx = -150
+    }
+    
+    func moveRight(){
+        player.physicsBody?.velocity.dx = 150
+    }
+    func stopMoving(){
+        player.physicsBody?.velocity.dx = 0
+    }
+    
     
 }

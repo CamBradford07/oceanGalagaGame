@@ -13,6 +13,10 @@ class GameViewController: UIViewController {
     
     var gameScene = GameScene()
 
+    @IBOutlet weak var rightbuttonOutlet: UIButton!
+    
+    @IBOutlet weak var leftButtonOutlet: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -35,6 +39,17 @@ class GameViewController: UIViewController {
         let projectileTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
             self.gameScene.shoot()
             }
+        let movementTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
+            if self.rightbuttonOutlet.isHighlighted {
+                self.gameScene.moveRight()
+            }
+            else if self.leftButtonOutlet.isHighlighted {
+                self.gameScene.moveLeft()
+            }
+            else{
+                self.gameScene.stopMoving()
+            }
+            }
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -44,4 +59,7 @@ class GameViewController: UIViewController {
     override var prefersStatusBarHidden: Bool {
         return true
     }
+    
+    
+    
 }
