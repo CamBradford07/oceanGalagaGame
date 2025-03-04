@@ -7,16 +7,21 @@
 
 import Foundation
 import SpriteKit
+import GameplayKit
 
 class Enemy{
     var image: SKTexture!
     var startingPosition: CGPoint!
     var startingVelocity: CGVector!
+    var id: Int!
+    static var Count = 0
     
     init(image: UIImage, startingPosition: CGPoint, startingVelocity: CGVector) {
         self.image = SKTexture(image: image)
         self.startingPosition = startingPosition
         self.startingVelocity = startingVelocity
+        id = Enemy.Count
+        Enemy.Count += 1
     }
     
     func generate(gameScene : GameScene){
@@ -32,13 +37,19 @@ class Enemy{
         enemyPhysicsBody.contactTestBitMask = 1
         enemyPhysicsBody.categoryBitMask = 1
         
+        enemyPhysicsBody.restitution = 0
+        enemyPhysicsBody.friction = 0
+        enemyPhysicsBody.linearDamping = 0
+        
         enemyNode.physicsBody = enemyPhysicsBody
         
         enemyNode.position = startingPosition
         enemyNode.physicsBody?.velocity = startingVelocity
         
-        gameScene.addChild(enemyNode)
+        enemyNode.name = "enemy"
         
+        gameScene.addChild(enemyNode)
+
     }
     
 }

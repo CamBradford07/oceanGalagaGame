@@ -61,5 +61,8 @@ class GameViewController: UIViewController {
     }
     
     
+    @IBAction func spawnAction(_ sender: UIButton) {
+        gameScene.generateEnemy()
+    }
     
 }
