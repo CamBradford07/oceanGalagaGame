@@ -27,7 +27,7 @@ class Enemy{
     func generate(gameScene : GameScene){
         let enemyNode = SKSpriteNode(texture: image, size: CGSize(width: 100, height: 100))
         
-        let enemyPhysicsBody = SKPhysicsBody()
+        let enemyPhysicsBody = SKPhysicsBody(texture: enemyNode.texture!, size: enemyNode.size)
         
         enemyPhysicsBody.isDynamic = true
         enemyPhysicsBody.affectedByGravity = false

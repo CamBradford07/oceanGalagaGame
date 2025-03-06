@@ -37,7 +37,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     func shoot(){
         let projectile = SKSpriteNode(color: .blue, size: CGSize(width: 10, height: 50))
         projectile.position = CGPoint(x: player.position.x, y: player.position.y + 25 + player.size.height / 2)
-        let body = SKPhysicsBody()
+        let body = SKPhysicsBody(rectangleOf: projectile.size)
         body.affectedByGravity = false
         body.isDynamic = true
         body.allowsRotation = false
@@ -46,6 +46,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         body.friction = 0
         body.categoryBitMask = 1
         body.contactTestBitMask = 1
+        body.linearDamping = 0
         body.velocity = CGVector(dx: 0, dy: 500)
         projectile.physicsBody = body
         projectile.zPosition = 0
