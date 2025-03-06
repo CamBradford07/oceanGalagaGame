@@ -11,6 +11,7 @@ import GameplayKit
 class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player : SKSpriteNode!
+    var score: SKLabelNode!
     
     var projectiles = [SKSpriteNode]()
     var enemies = [Enemy]()
@@ -19,7 +20,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         physicsWorld.contactDelegate = self
         
         player = self.childNode(withName: "player") as! SKSpriteNode
-        
+        score = self.childNode(withName: "score") as! SKLabelNode
         
     }
     
