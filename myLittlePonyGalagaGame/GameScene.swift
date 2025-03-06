@@ -34,6 +34,14 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 
         }
     
+    func didBegin(_ contact: SKPhysicsContact) {
+        if contact.bodyA.node?.name == "projectile" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "projectile"{
+            contact.bodyA.node?.removeFromParent()
+            contact.bodyB.node?.removeFromParent()
+        }
+        
+    }
+    
     
     func shoot(){
         let projectile = SKSpriteNode(color: .blue, size: CGSize(width: 10, height: 50))
