@@ -13,7 +13,6 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player : SKSpriteNode!
     
     var projectiles = [SKSpriteNode]()
-    var enemies = [Enemy]()
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
@@ -31,9 +30,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 projectiles.remove(at: projectileIndex)
             }
         }
-        
-
-        
+                
         }
     
     
@@ -51,6 +48,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         body.contactTestBitMask = 1
         body.velocity = CGVector(dx: 0, dy: 500)
         projectile.physicsBody = body
+        projectile.zPosition = 0
         projectile.name = "projectile"
         self.addChild(projectile)
         projectiles.append(projectile)
@@ -72,8 +70,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         let enemy = Enemy(image: UIImage(named: "ponyEnemy1")!, startingPosition: CGPoint(x: randomX, y: 800), startingVelocity: CGVector(dx: 0, dy: -75))
         
-        let enemyNode = enemy.generate(gameScene : self)
-        enemies.append(enemy)
+        enemy.generate(gameScene : self)
     }
     
 }

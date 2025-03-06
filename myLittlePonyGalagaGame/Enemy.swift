@@ -45,9 +45,10 @@ class Enemy{
         
         enemyNode.position = startingPosition
         enemyNode.physicsBody?.velocity = startingVelocity
+        enemyNode.zPosition = 0
         
         enemyNode.name = "enemy"
-        
+                
         gameScene.addChild(enemyNode)
 
     }
