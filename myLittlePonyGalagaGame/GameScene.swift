@@ -125,40 +125,38 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func generateEnemy(){
         let randomX = Double.random(in: -270...270)
-<<<<<<< Updated upstream
         let randomEnemy = Int.random(in: 1...6)
         
-        switch(randomEnemy){
-        case 1:
-            enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
-            
-        case 2:
-            enemy2.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
-            
-        case 3:
-            enemy3.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
-            
-        case 4:
-            enemy4.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
-            
-        case 5:
-            enemy5.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
-            
-        case 6:
-            enemy6.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
-            
-        default:
-            print("error!")
-        }
-=======
         var xVelocity = 0
         if randomX < 0 {
             xVelocity = 75
         } else {
             xVelocity = -75
         }
-        enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
->>>>>>> Stashed changes
+        
+        switch(randomEnemy){
+        case 1:
+            enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            
+        case 2:
+            enemy2.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            
+        case 3:
+            enemy3.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            
+        case 4:
+            enemy4.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            
+        case 5:
+            enemy5.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            
+        case 6:
+            enemy6.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            
+        default:
+            print("error!")
+        }
+
     }
     
 }
