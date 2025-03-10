@@ -36,7 +36,7 @@ class GameViewController: UIViewController {
             view.showsNodeCount = true
         }
         
-        let projectileTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+        let projectileTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
             self.gameScene.shoot()
             }
         let movementTimer = Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true) { timer in
@@ -50,9 +50,11 @@ class GameViewController: UIViewController {
                 self.gameScene.stopMoving()
             }
             }
-        let enemyTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
-            self.gameScene.generateEnemy()
+        let enemyTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+            for i in 1...6{
+                self.gameScene.generateEnemy()
             }
+        }
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {

@@ -73,6 +73,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             contact.bodyB.node?.removeFromParent()
         }
         
+        if contact.bodyA.node?.name == "leftBarrier" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "leftBarrier"{
+            if contact.bodyA.node?.name == "enemy"{
+                contact.bodyA.node?.physicsBody?.velocity.dx = 75
+            }
+            else{
+                contact.bodyB.node?.physicsBody?.velocity.dx = 75
+            }
+        }
+        
+        if contact.bodyA.node?.name == "rightBarrier" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "rightBarrier"{
+            if contact.bodyA.node?.name == "enemy"{
+                contact.bodyA.node?.physicsBody?.velocity.dx = -75
+            }
+            else{
+                contact.bodyB.node?.physicsBody?.velocity.dx = -75
+            }
+        }
+        
+        if contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "enemy"{
+            if Int((contact.bodyA.node?.position.x)!) < Int((contact.bodyB.node?.position.x)!){
+                contact.bodyA.velocity.dx = -75
+                contact.bodyB.velocity.dx = 75
+            }
+            else{
+                contact.bodyA.velocity.dx = 75
+                contact.bodyB.velocity.dx = -75
+            }
+        }
     }
     
     
@@ -97,6 +125,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func generateEnemy(){
         let randomX = Double.random(in: -270...270)
+<<<<<<< Updated upstream
         let randomEnemy = Int.random(in: 1...6)
         
         switch(randomEnemy){
@@ -121,6 +150,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         default:
             print("error!")
         }
+=======
+        var xVelocity = 0
+        if randomX < 0 {
+            xVelocity = 75
+        } else {
+            xVelocity = -75
+        }
+        enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+>>>>>>> Stashed changes
     }
     
 }
