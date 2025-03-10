@@ -13,6 +13,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var player : SKSpriteNode!
     var score: SKLabelNode!
     
+    var projectileNode: SKSpriteNode!
+    var enemy1Node: SKSpriteNode!
+    
+    var enemy1: Enemy!
+    
+    var scoreNum = 0
+    
     var projectiles = [SKSpriteNode]()
     
     override func didMove(to view: SKView) {
@@ -20,6 +27,10 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         player = self.childNode(withName: "player") as! SKSpriteNode
         score = self.childNode(withName: "score") as! SKLabelNode
+        projectileNode = self.childNode(withName: "projectile") as! SKSpriteNode
+        enemy1Node = self.childNode(withName: "enemy1") as! SKSpriteNode
+        
+        enemy1 = Enemy(node: enemy1Node, score: 50)
         
     }
     
@@ -36,6 +47,8 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func didBegin(_ contact: SKPhysicsContact) {
         if contact.bodyA.node?.name == "projectile" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "projectile"{
+            scoreNum += enemy1.score
+            score.text = "Score: \(scoreNum)"
             contact.bodyA.node?.removeFromParent()
             contact.bodyB.node?.removeFromParent()
         }
@@ -44,22 +57,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     
     func shoot(){
-        let projectile = SKSpriteNode(color: .blue, size: CGSize(width: 10, height: 50))
+        let projectile = projectileNode.copy() as! SKSpriteNode
         projectile.position = CGPoint(x: player.position.x, y: player.position.y + 25 + player.size.height / 2)
-        let body = SKPhysicsBody(rectangleOf: projectile.size)
-        body.affectedByGravity = false
-        body.isDynamic = true
-        body.allowsRotation = false
-        body.pinned = false
-        body.restitution = 0
-        body.friction = 0
-        body.categoryBitMask = 1
-        body.contactTestBitMask = 1
-        body.linearDamping = 0
-        body.velocity = CGVector(dx: 0, dy: 500)
-        projectile.physicsBody = body
-        projectile.zPosition = 0
-        projectile.name = "projectile"
+        projectile.physicsBody?.velocity = CGVector(dx: 0, dy: 500)
         self.addChild(projectile)
         projectiles.append(projectile)
     }
@@ -77,10 +77,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func generateEnemy(){
         let randomX = Double.random(in: -270...270)
-        
-        let enemy = Enemy(image: UIImage(named: "ponyEnemy1")!, startingPosition: CGPoint(x: randomX, y: 800), startingVelocity: CGVector(dx: 0, dy: -75))
-        
-        enemy.generate(gameScene : self)
+        enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
     }
     
 }
