@@ -50,6 +50,9 @@ class GameViewController: UIViewController {
                 self.gameScene.stopMoving()
             }
             }
+        let enemyTimer = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: true) { timer in
+            self.gameScene.generateEnemy()
+            }
     }
 
     override var supportedInterfaceOrientations: UIInterfaceOrientationMask {
@@ -61,8 +64,5 @@ class GameViewController: UIViewController {
     }
     
     
-    @IBAction func spawnAction(_ sender: UIButton) {
-        gameScene.generateEnemy()
-    }
     
 }
