@@ -15,8 +15,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var projectileNode: SKSpriteNode!
     var enemy1Node: SKSpriteNode!
+    var enemy2Node: SKSpriteNode!
+    var enemy3Node: SKSpriteNode!
+    var enemy4Node: SKSpriteNode!
+    var enemy5Node: SKSpriteNode!
+    var enemy6Node: SKSpriteNode!
     
     var enemy1: Enemy!
+    var enemy2: Enemy!
+    var enemy3: Enemy!
+    var enemy4: Enemy!
+    var enemy5: Enemy!
+    var enemy6: Enemy!
     
     var scoreNum = 0
     
@@ -29,8 +39,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         score = self.childNode(withName: "score") as! SKLabelNode
         projectileNode = self.childNode(withName: "projectile") as! SKSpriteNode
         enemy1Node = self.childNode(withName: "enemy1") as! SKSpriteNode
+        enemy2Node = self.childNode(withName: "enemy2") as! SKSpriteNode
+        enemy3Node = self.childNode(withName: "enemy3") as! SKSpriteNode
+        enemy4Node = self.childNode(withName: "enemy4") as! SKSpriteNode
+        enemy5Node = self.childNode(withName: "enemy5") as! SKSpriteNode
+        enemy6Node = self.childNode(withName: "enemy6") as! SKSpriteNode
         
         enemy1 = Enemy(node: enemy1Node, score: 50)
+        enemy2 = Enemy(node: enemy2Node, score: 50)
+        enemy3 = Enemy(node: enemy3Node, score: 50)
+        enemy4 = Enemy(node: enemy4Node, score: 50)
+        enemy5 = Enemy(node: enemy5Node, score: 50)
+        enemy6 = Enemy(node: enemy6Node, score: 50)
         
     }
     
@@ -77,7 +97,30 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func generateEnemy(){
         let randomX = Double.random(in: -270...270)
-        enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+        let randomEnemy = Int.random(in: 1...6)
+        
+        switch(randomEnemy){
+        case 1:
+            enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+            
+        case 2:
+            enemy2.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+            
+        case 3:
+            enemy3.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+            
+        case 4:
+            enemy4.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+            
+        case 5:
+            enemy5.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+            
+        case 6:
+            enemy6.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: 0, dy: -100))
+            
+        default:
+            print("error!")
+        }
     }
     
 }
