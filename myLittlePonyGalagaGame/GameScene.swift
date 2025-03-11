@@ -93,13 +93,34 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         
         if contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "enemy"{
             if Int((contact.bodyA.node?.position.x)!) < Int((contact.bodyB.node?.position.x)!){
-                contact.bodyA.velocity.dx = -75
-                contact.bodyB.velocity.dx = 75
-                print("stuff happened")
+                if (contact.bodyA.node?.physicsBody?.velocity.dx)! > 0{
+                    contact.bodyA.velocity.dx = 75
+                    contact.bodyB.velocity.dx = 75
+                }
+                else{
+                    contact.bodyA.velocity.dx = -75
+                    contact.bodyB.velocity.dx = -75
+                }
+                
             }
             else{
-                contact.bodyA.velocity.dx = 75
-                contact.bodyB.velocity.dx = -75
+                if (contact.bodyB.node?.physicsBody?.velocity.dx)! > 0{
+                    contact.bodyA.velocity.dx = 75
+                    contact.bodyB.velocity.dx = 75
+                }
+                else{
+                    contact.bodyA.velocity.dx = -75
+                    contact.bodyB.velocity.dx = -75
+                }
+            }
+        }
+        
+        if contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "ground" || contact.bodyA.node?.name == "ground" && contact.bodyB.node?.name == "enemy"{
+            if contact.bodyA.node?.name == "enemy"{
+                contact.bodyA.node?.removeFromParent()
+            }
+            else{
+                contact.bodyB.node?.removeFromParent()
             }
         }
     }
@@ -124,40 +145,40 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         player.physicsBody?.velocity.dx = 0
     }
     
-    func generateEnemy(){
-        let randomX = Double.random(in: -270...270)
+    func generateEnemy(xPlace: Double){
         let randomEnemy = Int.random(in: 1...6)
-        
-        var xVelocity = 0
-        if randomX < 0 {
-            xVelocity = 75
-        } else {
-            xVelocity = -75
-        }
         
         switch(randomEnemy){
         case 1:
-            enemy1.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            enemy1.generate(gameScene: self, startingPosition: CGPoint(x: xPlace, y: 750), startingVelocity: CGVector(dx: -75, dy: -100))
             
         case 2:
-            enemy2.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            enemy2.generate(gameScene: self, startingPosition: CGPoint(x: xPlace, y: 750), startingVelocity: CGVector(dx: -75, dy: -100))
             
         case 3:
-            enemy3.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            enemy3.generate(gameScene: self, startingPosition: CGPoint(x: xPlace, y: 750), startingVelocity: CGVector(dx: -75, dy: -100))
             
         case 4:
-            enemy4.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            enemy4.generate(gameScene: self, startingPosition: CGPoint(x: xPlace, y: 750), startingVelocity: CGVector(dx: -75, dy: -100))
             
         case 5:
-            enemy5.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            enemy5.generate(gameScene: self, startingPosition: CGPoint(x: xPlace, y: 750), startingVelocity: CGVector(dx: -75, dy: -100))
             
         case 6:
-            enemy6.generate(gameScene: self, startingPosition: CGPoint(x: randomX, y: 750), startingVelocity: CGVector(dx: xVelocity, dy: -100))
+            enemy6.generate(gameScene: self, startingPosition: CGPoint(x: xPlace, y: 750), startingVelocity: CGVector(dx: -75, dy: -100))
             
         default:
             print("error!")
         }
 
+    }
+    
+    func generateEnemyLine(){
+        generateEnemy(xPlace: -300)
+        generateEnemy(xPlace: -150)
+        generateEnemy(xPlace: 0)
+        generateEnemy(xPlace: 150)
+        generateEnemy(xPlace: 300)
     }
     
 }
