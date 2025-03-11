@@ -95,6 +95,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             if Int((contact.bodyA.node?.position.x)!) < Int((contact.bodyB.node?.position.x)!){
                 contact.bodyA.velocity.dx = -75
                 contact.bodyB.velocity.dx = 75
+                print("stuff happened")
             }
             else{
                 contact.bodyA.velocity.dx = 75

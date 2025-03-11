@@ -50,7 +50,7 @@ class GameViewController: UIViewController {
                 self.gameScene.stopMoving()
             }
             }
-        let enemyTimer = Timer.scheduledTimer(withTimeInterval: 5, repeats: true) { timer in
+        let enemyTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
             for i in 1...6{
                 self.gameScene.generateEnemy()
             }
