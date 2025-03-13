@@ -280,7 +280,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     func shoot(){
         let projectile = projectileNode.copy() as! SKSpriteNode
-        projectile.position = CGPoint(x: player.position.x, y: player.position.y + 25 + player.size.height / 2)
+        projectile.position = CGPoint(x: player.position.x, y: player.position.y + 30 + player.size.height / 2)
         projectile.physicsBody?.velocity = CGVector(dx: 0, dy: 500)
         self.addChild(projectile)
         projectiles.append(projectile)
