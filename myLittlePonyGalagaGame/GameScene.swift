@@ -45,12 +45,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enemy5Node = self.childNode(withName: "enemy5") as! SKSpriteNode
         enemy6Node = self.childNode(withName: "enemy6") as! SKSpriteNode
         
-        enemy1 = Enemy(node: enemy1Node, score: 50)
-        enemy2 = Enemy(node: enemy2Node, score: 50)
-        enemy3 = Enemy(node: enemy3Node, score: 50)
+        enemy1 = Enemy(node: enemy1Node, score: 20)
+        enemy2 = Enemy(node: enemy2Node, score: 30)
+        enemy3 = Enemy(node: enemy3Node, score: 40)
         enemy4 = Enemy(node: enemy4Node, score: 50)
-        enemy5 = Enemy(node: enemy5Node, score: 50)
-        enemy6 = Enemy(node: enemy6Node, score: 50)
+        enemy5 = Enemy(node: enemy5Node, score: 60)
+        enemy6 = Enemy(node: enemy6Node, score: 70)
         
     }
     
@@ -66,60 +66,212 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         }
     
     func didBegin(_ contact: SKPhysicsContact) {
-        if contact.bodyA.node?.name == "projectile" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "projectile"{
-            scoreNum += enemy1.score
-            score.text = "Score: \(scoreNum)"
-            contact.bodyA.node?.removeFromParent()
-            contact.bodyB.node?.removeFromParent()
-        }
-        
-        if contact.bodyA.node?.name == "leftBarrier" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "leftBarrier"{
-            if contact.bodyA.node?.name == "enemy"{
-                contact.bodyA.node?.physicsBody?.velocity.dx = 75
+        if contact.bodyA.node?.name == "enemy1"{
+            if contact.bodyB.node?.name == "projectile"{
+                scoreNum += enemy1.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
             }
-            else{
-                contact.bodyB.node?.physicsBody?.velocity.dx = 75
+            else if contact.bodyB.node?.name == "leftBarrier"{
+                contact.bodyA.velocity.dx = 75
             }
-        }
-        
-        if contact.bodyA.node?.name == "rightBarrier" && contact.bodyB.node?.name == "enemy" || contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "rightBarrier"{
-            if contact.bodyA.node?.name == "enemy"{
-                contact.bodyA.node?.physicsBody?.velocity.dx = -75
+            else if contact.bodyB.node?.name == "rightBarrier"{
+                contact.bodyA.velocity.dx = -75
             }
-            else{
-                contact.bodyB.node?.physicsBody?.velocity.dx = -75
-            }
-        }
-        
-        if contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "enemy"{
-            if Int((contact.bodyA.node?.position.x)!) < Int((contact.bodyB.node?.position.x)!){
-                if (contact.bodyA.node?.physicsBody?.velocity.dx)! > 0{
-                    contact.bodyA.velocity.dx = 75
-                    contact.bodyB.velocity.dx = 75
-                }
-                else{
-                    contact.bodyA.velocity.dx = -75
-                    contact.bodyB.velocity.dx = -75
-                }
-                
-            }
-            else{
-                if (contact.bodyB.node?.physicsBody?.velocity.dx)! > 0{
-                    contact.bodyA.velocity.dx = 75
-                    contact.bodyB.velocity.dx = 75
-                }
-                else{
-                    contact.bodyA.velocity.dx = -75
-                    contact.bodyB.velocity.dx = -75
-                }
-            }
-        }
-        
-        if contact.bodyA.node?.name == "enemy" && contact.bodyB.node?.name == "ground" || contact.bodyA.node?.name == "ground" && contact.bodyB.node?.name == "enemy"{
-            if contact.bodyA.node?.name == "enemy"{
+            else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
             }
-            else{
+        }
+        if contact.bodyB.node?.name == "enemy1"{
+            if contact.bodyA.node?.name == "projectile"{
+                scoreNum += enemy1.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "leftBarrier"{
+                contact.bodyB.velocity.dx = 75
+            }
+            else if contact.bodyA.node?.name == "rightBarrier"{
+                contact.bodyB.velocity.dx = -75
+            }
+            else if contact.bodyA.node?.name == "ground"{
+                contact.bodyB.node?.removeFromParent()
+            }
+        }
+        
+        if contact.bodyA.node?.name == "enemy2"{
+            if contact.bodyB.node?.name == "projectile"{
+                scoreNum += enemy2.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyB.node?.name == "leftBarrier"{
+                contact.bodyA.velocity.dx = 75
+            }
+            else if contact.bodyB.node?.name == "rightBarrier"{
+                contact.bodyA.velocity.dx = -75
+            }
+            else if contact.bodyB.node?.name == "ground"{
+                contact.bodyA.node?.removeFromParent()
+            }
+        }
+        if contact.bodyB.node?.name == "enemy2"{
+            if contact.bodyA.node?.name == "projectile"{
+                scoreNum += enemy2.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "leftBarrier"{
+                contact.bodyB.velocity.dx = 75
+            }
+            else if contact.bodyA.node?.name == "rightBarrier"{
+                contact.bodyB.velocity.dx = -75
+            }
+            else if contact.bodyA.node?.name == "ground"{
+                contact.bodyB.node?.removeFromParent()
+            }
+        }
+
+        if contact.bodyA.node?.name == "enemy3"{
+            if contact.bodyB.node?.name == "projectile"{
+                scoreNum += enemy3.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyB.node?.name == "leftBarrier"{
+                contact.bodyA.velocity.dx = 75
+            }
+            else if contact.bodyB.node?.name == "rightBarrier"{
+                contact.bodyA.velocity.dx = -75
+            }
+            else if contact.bodyB.node?.name == "ground"{
+                contact.bodyA.node?.removeFromParent()
+            }
+        }
+        if contact.bodyB.node?.name == "enemy3"{
+            if contact.bodyA.node?.name == "projectile"{
+                scoreNum += enemy3.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "leftBarrier"{
+                contact.bodyB.velocity.dx = 75
+            }
+            else if contact.bodyA.node?.name == "rightBarrier"{
+                contact.bodyB.velocity.dx = -75
+            }
+            else if contact.bodyA.node?.name == "ground"{
+                contact.bodyB.node?.removeFromParent()
+            }
+        }
+        
+        if contact.bodyA.node?.name == "enemy4"{
+            if contact.bodyB.node?.name == "projectile"{
+                scoreNum += enemy4.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyB.node?.name == "leftBarrier"{
+                contact.bodyA.velocity.dx = 75
+            }
+            else if contact.bodyB.node?.name == "rightBarrier"{
+                contact.bodyA.velocity.dx = -75
+            }
+            else if contact.bodyB.node?.name == "ground"{
+                contact.bodyA.node?.removeFromParent()
+            }
+        }
+        if contact.bodyB.node?.name == "enemy4"{
+            if contact.bodyA.node?.name == "projectile"{
+                scoreNum += enemy4.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "leftBarrier"{
+                contact.bodyB.velocity.dx = 75
+            }
+            else if contact.bodyA.node?.name == "rightBarrier"{
+                contact.bodyB.velocity.dx = -75
+            }
+            else if contact.bodyA.node?.name == "ground"{
+                contact.bodyB.node?.removeFromParent()
+            }
+        }
+        
+        if contact.bodyA.node?.name == "enemy5"{
+            if contact.bodyB.node?.name == "projectile"{
+                scoreNum += enemy5.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyB.node?.name == "leftBarrier"{
+                contact.bodyA.velocity.dx = 75
+            }
+            else if contact.bodyB.node?.name == "rightBarrier"{
+                contact.bodyA.velocity.dx = -75
+            }
+            else if contact.bodyB.node?.name == "ground"{
+                contact.bodyA.node?.removeFromParent()
+            }
+        }
+        if contact.bodyB.node?.name == "enemy5"{
+            if contact.bodyA.node?.name == "projectile"{
+                scoreNum += enemy5.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "leftBarrier"{
+                contact.bodyB.velocity.dx = 75
+            }
+            else if contact.bodyA.node?.name == "rightBarrier"{
+                contact.bodyB.velocity.dx = -75
+            }
+            else if contact.bodyA.node?.name == "ground"{
+                contact.bodyB.node?.removeFromParent()
+            }
+        }
+        
+        if contact.bodyA.node?.name == "enemy6"{
+            if contact.bodyB.node?.name == "projectile"{
+                scoreNum += enemy6.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyB.node?.name == "leftBarrier"{
+                contact.bodyA.velocity.dx = 75
+            }
+            else if contact.bodyB.node?.name == "rightBarrier"{
+                contact.bodyA.velocity.dx = -75
+            }
+            else if contact.bodyB.node?.name == "ground"{
+                contact.bodyA.node?.removeFromParent()
+            }
+        }
+        if contact.bodyB.node?.name == "enemy6"{
+            if contact.bodyA.node?.name == "projectile"{
+                scoreNum += enemy6.score
+                score.text = "Score: \(scoreNum)"
+                contact.bodyA.node?.removeFromParent()
+                contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "leftBarrier"{
+                contact.bodyB.velocity.dx = 75
+            }
+            else if contact.bodyA.node?.name == "rightBarrier"{
+                contact.bodyB.velocity.dx = -75
+            }
+            else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
             }
         }

@@ -26,8 +26,7 @@ class Enemy{
         let enemyNode = node.copy() as! SKSpriteNode
         enemyNode.position = startingPosition
         enemyNode.physicsBody?.velocity = startingVelocity
-        
-        enemyNode.name = "enemy"
+        enemyNode.physicsBody?.restitution = 1
                 
         gameScene.addChild(enemyNode)
 
