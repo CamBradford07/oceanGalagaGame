@@ -56,7 +56,7 @@ class GameViewController: UIViewController {
         let enemyTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: true) { timer in
             self.gameScene.generateEnemyLine()
             if self.delay > 2{
-                self.delay -= 0.5
+                self.delay -= 1
             }
         }
     }
