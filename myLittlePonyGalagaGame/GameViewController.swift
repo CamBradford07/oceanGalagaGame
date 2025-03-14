@@ -12,6 +12,7 @@ import GameplayKit
 class GameViewController: UIViewController {
     
     var gameScene = GameScene()
+    var delay = 10.0
 
     @IBOutlet weak var rightbuttonOutlet: UIButton!
     
@@ -34,6 +35,8 @@ class GameViewController: UIViewController {
             
             view.showsFPS = true
             view.showsNodeCount = true
+            
+            gameScene.generateEnemyLine()
         }
         
         let projectileTimer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: true) { timer in
@@ -50,8 +53,11 @@ class GameViewController: UIViewController {
                 self.gameScene.stopMoving()
             }
             }
-        let enemyTimer = Timer.scheduledTimer(withTimeInterval: 10, repeats: true) { timer in
+        let enemyTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: true) { timer in
             self.gameScene.generateEnemyLine()
+            if self.delay > 2{
+                self.delay -= 0.5
+            }
         }
     }
 
