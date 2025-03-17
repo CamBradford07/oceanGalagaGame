@@ -40,6 +40,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var defaults = UserDefaults.standard
     
+    var cam = SKCameraNode()
+    var area = "Game"
+    
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         
@@ -63,7 +66,12 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enemy5 = Enemy(node: enemy5Node, score: 60)
         enemy6 = Enemy(node: enemy6Node, score: 70)
         
+        self.camera = cam
+        
         highScoreNum = defaults.integer(forKey: "highScore")
+        
+        highScore.text = "High Score: \(highScoreNum)"
+
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -73,6 +81,11 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 projectiles[projectileIndex].removeFromParent()
                 projectiles.remove(at: projectileIndex)
             }
+        }
+        
+        if area == "Dead"{
+            player.position.x = -2240
+            area = "Game"
         }
                 
         }
@@ -94,6 +107,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
             }
+            else if contact.bodyB.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
+            }
         }
         if contact.bodyB.node?.name == "enemy1"{
             if contact.bodyA.node?.name == "projectile"{
@@ -110,6 +135,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
         
@@ -129,6 +166,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
             }
+            else if contact.bodyB.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
+            }
         }
         if contact.bodyB.node?.name == "enemy2"{
             if contact.bodyA.node?.name == "projectile"{
@@ -145,6 +194,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
 
@@ -164,6 +225,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
             }
+            else if contact.bodyB.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
+            }
         }
         if contact.bodyB.node?.name == "enemy3"{
             if contact.bodyA.node?.name == "projectile"{
@@ -180,6 +253,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
         
@@ -199,6 +284,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
             }
+            else if contact.bodyB.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
+            }
         }
         if contact.bodyB.node?.name == "enemy4"{
             if contact.bodyA.node?.name == "projectile"{
@@ -215,6 +312,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
         
@@ -234,6 +343,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
             }
+            else if contact.bodyB.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
+            }
         }
         if contact.bodyB.node?.name == "enemy5"{
             if contact.bodyA.node?.name == "projectile"{
@@ -250,6 +371,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
+            }
+            else if contact.bodyA.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
         
@@ -268,6 +401,18 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             }
             else if contact.bodyB.node?.name == "ground"{
                 contact.bodyA.node?.removeFromParent()
+            }
+            else if contact.bodyB.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
         if contact.bodyB.node?.name == "enemy6"{
@@ -291,20 +436,25 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 if scoreNum > highScoreNum{
                     UserDefaults.standard.set(scoreNum, forKey: "highScore")
                     highScoreNum = scoreNum
-                    finalHighScore.text = "High Score: \(highScoreNum)"
-                    finalScore.text = "Final Score: \(scoreNum)"
-                }
+                    }
+                finalHighScore.text = "High Score: \(highScoreNum)"
+                finalScore.text = "Final Score: \(scoreNum)"
+                player.position.x = -2240
+                cam.position.x = player.position.x
+                area = "Dead"
             }
         }
     }
     
     
     func shoot(){
-        let projectile = projectileNode.copy() as! SKSpriteNode
-        projectile.position = CGPoint(x: player.position.x, y: player.position.y + 30 + player.size.height / 2)
-        projectile.physicsBody?.velocity = CGVector(dx: 0, dy: 500)
-        self.addChild(projectile)
-        projectiles.append(projectile)
+        if playerAlive{
+            let projectile = projectileNode.copy() as! SKSpriteNode
+            projectile.position = CGPoint(x: player.position.x, y: player.position.y + 30 + player.size.height / 2)
+            projectile.physicsBody?.velocity = CGVector(dx: 0, dy: 500)
+            self.addChild(projectile)
+            projectiles.append(projectile)
+        }
     }
     
     func moveLeft(){
