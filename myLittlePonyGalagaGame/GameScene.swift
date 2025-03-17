@@ -12,6 +12,9 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     
     var player : SKSpriteNode!
     var score: SKLabelNode!
+    var highScore: SKLabelNode!
+    var finalScore: SKLabelNode!
+    var finalHighScore: SKLabelNode!
     
     var projectileNode: SKSpriteNode!
     var enemy1Node: SKSpriteNode!
@@ -29,14 +32,22 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     var enemy6: Enemy!
     
     var scoreNum = 0
+    var highScoreNum = 0
+    
+    var playerAlive = true
     
     var projectiles = [SKSpriteNode]()
+    
+    var defaults = UserDefaults.standard
     
     override func didMove(to view: SKView) {
         physicsWorld.contactDelegate = self
         
         player = self.childNode(withName: "player") as! SKSpriteNode
         score = self.childNode(withName: "score") as! SKLabelNode
+        highScore = self.childNode(withName: "highScore") as! SKLabelNode
+        finalScore = self.childNode(withName: "finalScore") as! SKLabelNode
+        finalHighScore = self.childNode(withName: "finalHighScore") as! SKLabelNode
         projectileNode = self.childNode(withName: "projectile") as! SKSpriteNode
         enemy1Node = self.childNode(withName: "enemy1") as! SKSpriteNode
         enemy2Node = self.childNode(withName: "enemy2") as! SKSpriteNode
@@ -52,6 +63,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
         enemy5 = Enemy(node: enemy5Node, score: 60)
         enemy6 = Enemy(node: enemy6Node, score: 70)
         
+        highScoreNum = defaults.integer(forKey: "highScore")
     }
     
     override func update(_ currentTime: TimeInterval) {
@@ -274,6 +286,15 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             else if contact.bodyA.node?.name == "ground"{
                 contact.bodyB.node?.removeFromParent()
             }
+            else if contact.bodyA.node?.name == "player"{
+                playerAlive = false
+                if scoreNum > highScoreNum{
+                    UserDefaults.standard.set(scoreNum, forKey: "highScore")
+                    highScoreNum = scoreNum
+                    finalHighScore.text = "High Score: \(highScoreNum)"
+                    finalScore.text = "Final Score: \(scoreNum)"
+                }
+            }
         }
     }
     
@@ -326,11 +347,13 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
     }
     
     func generateEnemyLine(){
-        generateEnemy(xPlace: -300)
-        generateEnemy(xPlace: -150)
-        generateEnemy(xPlace: 0)
-        generateEnemy(xPlace: 150)
-        generateEnemy(xPlace: 300)
+        if playerAlive{
+            generateEnemy(xPlace: -300)
+            generateEnemy(xPlace: -150)
+            generateEnemy(xPlace: 0)
+            generateEnemy(xPlace: 150)
+            generateEnemy(xPlace: 300)
+        }
     }
     
 }
