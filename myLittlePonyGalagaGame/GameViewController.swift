@@ -58,9 +58,11 @@ class GameViewController: UIViewController {
             }
             }
         let enemyTimer = Timer.scheduledTimer(withTimeInterval: delay, repeats: true) { timer in
-            self.gameScene.generateEnemyLine()
-            if self.delay > 2{
-                self.delay -= 1
+            if self.gameScene.playerAlive{
+                self.gameScene.generateEnemyLine()
+                if self.delay > 2{
+                    self.delay -= 1
+                }
             }
         }
     }
@@ -74,12 +76,14 @@ class GameViewController: UIViewController {
     }
     
     @IBAction func respawnButtonAction(_ sender: UIButton) {
-        gameScene.player.position = CGPoint(x: 0, y: -370)
-        gameScene.cam.position = CGPoint(x: 0, y: 0)
+        gameScene.player.position.x = 0
+        gameScene.cam.position.x = gameScene.player.position.x
         gameScene.playerAlive = true
         gameScene.scoreNum = 0
         gameScene.score.text = "Score: 0"
         gameScene.highScore.text = "HighScore: \(gameScene.highScoreNum)"
+        delay = 10
+        gameScene.generateEnemyLine()
     }
     
     

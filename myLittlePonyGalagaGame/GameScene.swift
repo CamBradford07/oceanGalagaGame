@@ -118,6 +118,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         if contact.bodyB.node?.name == "enemy1"{
@@ -147,6 +148,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         
@@ -177,6 +179,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         if contact.bodyB.node?.name == "enemy2"{
@@ -206,6 +209,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
 
@@ -236,6 +240,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         if contact.bodyB.node?.name == "enemy3"{
@@ -265,6 +270,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         
@@ -295,6 +301,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         if contact.bodyB.node?.name == "enemy4"{
@@ -324,6 +331,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         
@@ -354,6 +362,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         if contact.bodyB.node?.name == "enemy5"{
@@ -383,6 +392,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         
@@ -413,6 +423,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
         if contact.bodyB.node?.name == "enemy6"{
@@ -442,6 +453,7 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
                 player.position.x = -2240
                 cam.position.x = player.position.x
                 area = "Dead"
+                clearEnemies()
             }
         }
     }
@@ -503,6 +515,28 @@ class GameScene: SKScene, SKPhysicsContactDelegate {
             generateEnemy(xPlace: 0)
             generateEnemy(xPlace: 150)
             generateEnemy(xPlace: 300)
+        }
+    }
+    
+    func clearEnemies(){
+        let nodes = self.children
+        for node in nodes {
+            switch node.name {
+                case "enemy1":
+                node.removeFromParent()
+                case "enemy2":
+                node.removeFromParent()
+            case "enemy3":
+                node.removeFromParent()
+            case "enemy4":
+                node.removeFromParent()
+            case "enemy5":
+                node.removeFromParent()
+            case "enemy6":
+                node.removeFromParent()
+            default:
+                print()
+            }
         }
     }
     
