@@ -18,8 +18,12 @@ class GameViewController: UIViewController {
     
     @IBOutlet weak var leftButtonOutlet: UIButton!
     
+    @IBOutlet weak var respawnButton: UIButton!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        respawnButton.isHidden = true
         
         if let view = self.view as! SKView? {
             // Load the SKScene from 'GameScene.sks'
@@ -69,6 +73,14 @@ class GameViewController: UIViewController {
         return true
     }
     
+    @IBAction func respawnButtonAction(_ sender: UIButton) {
+        gameScene.player.position = CGPoint(x: 0, y: -370)
+        gameScene.cam.position = CGPoint(x: 0, y: 0)
+        gameScene.playerAlive = true
+        gameScene.scoreNum = 0
+        gameScene.score.text = "Score: 0"
+        gameScene.highScore.text = "HighScore: \(gameScene.highScoreNum)"
+    }
     
     
 }
